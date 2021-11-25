@@ -46,6 +46,7 @@ export default function PlaylistsPage({
           <UnorderedList ml="1.5rem">
             {Object.keys(playlists).map((playlistName) => (
               <ListItem
+                key={playlistName}
                 fontSize="xl"
                 fontWeight="medium"
                 textTransform="capitalize"
