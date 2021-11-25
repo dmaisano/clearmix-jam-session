@@ -1,4 +1,4 @@
-export class Video {
+export type Video = {
   name: string;
 
   description?: string;
@@ -12,4 +12,4 @@ export class Video {
   id: string; // video id
 
   createdAt: string;
-}
+};

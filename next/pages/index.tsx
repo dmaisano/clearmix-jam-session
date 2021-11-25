@@ -1,13 +1,22 @@
-import { Box } from "@chakra-ui/react";
-import type { NextPage } from "next";
+import { Text } from "@chakra-ui/react";
 import React from "react";
+import Wrapper from "../components/Wrapper";
 
-const Home: NextPage = () => {
+export async function getServerSideProps() {
+  // ? I could have opted to specify a redirect in the next.config
+  // ? For prod, would it be better to specify a redirect?
+  return {
+    redirect: {
+      destination: "/playlists",
+      permanent: false,
+    },
+  };
+}
+
+export default function Home() {
   return (
-    <Box h="full">
-      <div>next app</div>
-    </Box>
+    <Wrapper>
+      <Text>Index Page</Text>
+    </Wrapper>
   );
-};
-
-export default Home;
+}

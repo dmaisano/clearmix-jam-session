@@ -10,10 +10,10 @@ export class PlaylistsService {
     for (const video of MOCK_VIDEOS) {
       const playlistName = video.playlist;
 
-      if (!playlists[playlistName]) {
-        playlists[playlistName] = [video];
+      if (playlists[playlistName]) {
+        playlists[playlistName]?.push(video);
       } else {
-        playlists[playlistName].push(video);
+        playlists[playlistName] = [video];
       }
     }
 
